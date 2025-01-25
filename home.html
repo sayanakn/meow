@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Cupid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        romanticPurple: '#a855f7',
+                        deepPurple: '#6b21a8',
+                        softPink: '#f9a8d4',
+                        calmingBlue: '#60a5fa',
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-gradient-to-r from-romanticPurple via-softPink to-calmingBlue min-h-screen">
+    <header class="bg-white shadow-lg py-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold text-purple-600">💘 Cupid</h1>
+            <p class="text-gray-600">Bringing hearts closer, one step at a time.</p>
+        </div>
+    </header>
+
+    <div class="container mx-auto mt-8 px-4">
+        <!-- Feature Links -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
+            <!-- Photo Album -->
+            <a href="/photo-album" class="block bg-gradient-to-br from-pink-300 via-softPink to-purple-300 rounded-lg shadow-lg hover:scale-105 transition-transform h-48 md:h-60 flex items-center justify-center">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold text-purple-800">📸 Photo Album</h2>
+                    <p class="text-purple-700 mt-2">Share and cherish your favorite moments.</p>
+                </div>
+            </a>
+            <!-- Calendar -->
+            <a href="/calendar" class="block bg-gradient-to-br from-blue-300 via-calmingBlue to-purple-300 rounded-lg shadow-lg hover:scale-105 transition-transform h-48 md:h-60 flex items-center justify-center">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold text-blue-800">📅 Calendar</h2>
+                    <p class="text-blue-700 mt-2">Keep track of important dates.</p>
+                </div>
+            </a>
+            <!-- Love Quiz -->
+            <a href="/love-quiz" class="block bg-gradient-to-br from-pink-400 via-softPink to-red-300 rounded-lg shadow-lg hover:scale-105 transition-transform h-48 md:h-60 flex items-center justify-center">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold text-red-800">💌 Love Quiz</h2>
+                    <p class="text-red-700 mt-2">Test how well you know each other!</p>
+                </div>
+            </a>
+            <!-- Mood Tracker -->
+            <a href="/mood-tracker" class="block bg-gradient-to-br from-yellow-300 via-yellow-400 to-yellow-500 rounded-lg shadow-lg hover:scale-105 transition-transform h-48 md:h-60 flex items-center justify-center">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold text-yellow-800">😊 Mood Tracker</h2>
+                    <p class="text-yellow-700 mt-2">Track your daily moods together.</p>
+                </div>
+            </a>
+            <!-- Future Bucket List -->
+            <a href="/bucket-list" class="block bg-gradient-to-br from-green-300 via-green-400 to-green-500 rounded-lg shadow-lg hover:scale-105 transition-transform h-48 md:h-60 flex items-center justify-center">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold text-green-800">🎯 Future Bucket List</h2>
+                    <p class="text-green-700 mt-2">Plan your dreams and goals.</p>
+                </div>
+            </a>
+            <!-- Date Night Spinner -->
+            <a href="/date-night-spinner" class="block bg-gradient-to-br from-purple-400 via-romanticPurple to-purple-600 rounded-lg shadow-lg hover:scale-105 transition-transform h-48 md:h-60 flex items-center justify-center">
+                <div class="text-center">
+                    <h2 class="text-2xl font-bold text-purple-100">🎡 Date Night Spinner</h2>
+                    <p class="text-purple-200 mt-2">Find fun and exciting date ideas!</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer class="mt-8 bg-purple-600 py-4 text-center text-white">
+        <p>&copy; 2025 Cupid. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

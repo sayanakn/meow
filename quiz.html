@@ -1,0 +1,102 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        romanticPurple: '#a855f7',
+                        softPink: '#f9a8d4',
+                        calmingBlue: '#60a5fa',
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-gradient-to-r from-romanticPurple via-softPink to-calmingBlue min-h-screen flex items-center justify-center">
+    <div class="bg-white rounded-lg shadow-lg w-11/12 md:w-2/3 p-8">
+        <h1 class="text-3xl font-bold text-purple-600 text-center mb-6">💖 Mood Tracker</h1>
+        <p class="text-gray-600 text-center mb-4">Track your moods and reflect on your emotions!</p>
+
+        <form id="mood-form" class="mt-6 space-y-6">
+            <!-- Mood Selection -->
+            <div>
+                <p class="font-bold text-purple-700 mb-2">How do you feel today?</p>
+                <div class="flex justify-around">
+                    <label for="happy" class="text-xl cursor-pointer">
+                        <input type="radio" name="mood" id="happy" value="Happy" class="hidden peer" required>
+                        <span class="peer-checked:text-white peer-checked:bg-green-500 p-3 rounded-md bg-green-300 cursor-pointer">😊 Happy</span>
+                    </label>
+                    <label for="sad" class="text-xl cursor-pointer">
+                        <input type="radio" name="mood" id="sad" value="Sad" class="hidden peer" required>
+                        <span class="peer-checked:text-white peer-checked:bg-blue-500 p-3 rounded-md bg-blue-300 cursor-pointer">😞 Sad</span>
+                    </label>
+                    <label for="angry" class="text-xl cursor-pointer">
+                        <input type="radio" name="mood" id="angry" value="Angry" class="hidden peer" required>
+                        <span class="peer-checked:text-white peer-checked:bg-red-500 p-3 rounded-md bg-red-300 cursor-pointer">😡 Angry</span>
+                    </label>
+                    <label for="neutral" class="text-xl cursor-pointer">
+                        <input type="radio" name="mood" id="neutral" value="Neutral" class="hidden peer" required>
+                        <span class="peer-checked:text-white peer-checked:bg-yellow-500 p-3 rounded-md bg-yellow-300 cursor-pointer">😐 Neutral</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Mood Note -->
+            <div>
+                <label for="mood-note" class="font-bold text-purple-700 mb-2">Why do you feel this way today?</label>
+                <textarea id="mood-note" name="mood-note" class="w-full p-4 mt-2 border-2 rounded-md text-gray-700 focus:outline-none" placeholder="Write about your mood..." rows="4"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition">Save Mood</button>
+        </form>
+
+        <!-- Mood History -->
+        <div id="mood-history" class="mt-6">
+            <h2 class="text-2xl font-bold text-purple-600 mb-4">📅 Mood History</h2>
+            <div id="history-list" class="mt-4 space-y-2">
+                <!-- Example mood record -->
+                <div class="bg-gray-100 p-4 rounded-md">
+                    <p class="font-semibold text-purple-700">Yesterday:</p>
+                    <p class="text-gray-600">Mood: 😊 Happy</p>
+                    <p class="text-gray-600">Note: Had a great day with my partner, went for a walk in the park.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('mood-form');
+        const historyList = document.getElementById('history-list');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const mood = form.querySelector('input[name="mood"]:checked').value;
+            const note = document.getElementById('mood-note').value;
+
+            // Create a new mood history entry
+            const newHistory = document.createElement('div');
+            newHistory.classList.add('bg-gray-100', 'p-4', 'rounded-md');
+            newHistory.innerHTML = `
+                <p class="font-semibold text-purple-700">Today:</p>
+                <p class="text-gray-600">Mood: ${mood}</p>
+                <p class="text-gray-600">Note: ${note}</p>
+            `;
+
+            // Add it to the history list
+            historyList.appendChild(newHistory);
+
+            // Clear the form for the next entry
+            form.reset();
+        });
+    </script>
+</body>
+</html>
